@@ -14,7 +14,7 @@ env:
 
   KERNEL_SOURCE : "https://github.com/LineageOS/android_kernel_nokia_sdm660.git"
   KERNEL_BRANCH : "lineage-22.1"
-  
+
   CLANG_SOURCE : "https://github.com/LineageOS/android_prebuilts_clang_kernel_linux-x86_clang-r416183b.git"
   CLANG_BRANCH : "lineage-20.0"
 
@@ -33,7 +33,8 @@ env:
   KERNELSU_BRANCH : ""
 
   KERNELSU_AUTO_GET : "true" # if u want easy setting kernelsu, u can true.
-  KERNELSU_AUTO_FORK : "bakasu" # xxksu, rsuntk, next, bakasu and sukisu
+  KERNELSU_AUTO_FORK : "bakasu" # xxksu, rsuntk , next, bakasu and sukisu
+
   SUSFS_ENABLE : true
   SUSFS_FIXED : false
 
@@ -64,12 +65,12 @@ env:
   REKERNEL_ENABLE: "false" # if u need Re:Kernel.
   DROIDSPACES_ENABLE: "false" # if u need Droidspaces or LXC/Docker.
   NOMOUNT_ENABLE: "false" # if u need NoMount.
+  FGETPRIORITY_ENABLE: "false" #if u need hide getpriority.
+  VPNHIDE_ENABLE: "false" #if u need hide vpn status.
 
   HOOK_METHOD: "syscall" # Manual hook method ->  syscall.
 
-  KERNEL_PATCH: "false" # If your kernel version is <= 4.9, you have the option of enabling the patch to patch the kernel_write and kernel_read functions.
-
-  KPM_ENABLE: "true" # Anyone devices.
+  KPM_ENABLE: "false" # Anyone devices.
   KPM_INLINE: "false" # Only use it for SukiSU-Ultra.
   KPM_KPATCH_NEXT: "false" # If u want hook KPatch-Next in build step.
   KPM_PATCH_SOURCE: "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU_patch/refs/heads/main/kpm/patch_linux" # If u want to use KPM Inline,so you need set patch exec file source -> raw.githubusercontent.com/Test/Test/patch .
@@ -131,6 +132,12 @@ jobs:
 
       - name: 🛡️ Patch Kernel of NoMount
         uses: ./.github/workflows/patch-nomount
+
+      - name: ⛔ Patch Kernel of fgetpriority
+        uses: ./.github/workflows/patch-fgetpriority
+
+      - name: 🛜 Patch Kernel of VPNHide
+        uses: ./.github/workflows/patch-vpnhide
 
       - name: 🚀 Build Process
         uses: ./.github/workflows/build-process
