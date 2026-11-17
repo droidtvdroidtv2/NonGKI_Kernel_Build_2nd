@@ -68,7 +68,7 @@ env:
   FGETPRIORITY_ENABLE: "false" #if u need hide getpriority.
   VPNHIDE_ENABLE: "false" #if u need hide vpn status.
 
-  HOOK_METHOD: "inline" # Manual hook method ->  syscall.
+  HOOK_METHOD: "normal" # Manual hook method ->  syscall.
 
   KPM_ENABLE: "false" # Anyone devices.
   KPM_INLINE: "false" # Only use it for SukiSU-Ultra.
