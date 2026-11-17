@@ -56,8 +56,8 @@ env:
 
   KERNELSU_METHOD: "shell" # shell, manual and only.
 
-  PATCHES_SOURCE: "author/source" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
-  PATCHES_BRANCH: "branch" # [your_branch] -> main
+  PATCHES_SOURCE: "" # [your_name]/[your_patch] -> gooder123/NonGKI_Patcher
+  PATCHES_BRANCH: "" # [your_branch] -> main
 
   SUSFS_FOLDER_FIXED: "" # Fill in your patch prefix directory here. Leave it blank if there isn't one. -> your_folder
   SUSFS_PATCH_FIXED: "" # Fill in your patches here. If there are multiple patches, please separate them with a comma. Leave it blank if there isn't one. -> patch1,patch2
@@ -68,7 +68,7 @@ env:
   FGETPRIORITY_ENABLE: "false" #if u need hide getpriority.
   VPNHIDE_ENABLE: "false" #if u need hide vpn status.
 
-  HOOK_METHOD: "syscall" # Manual hook method ->  syscall.
+  HOOK_METHOD: "inline" # Manual hook method ->  syscall.
 
   KPM_ENABLE: "false" # Anyone devices.
   KPM_INLINE: "false" # Only use it for SukiSU-Ultra.
@@ -85,7 +85,7 @@ env:
   SKIP_PATCH: "false" # Ignore errors found in Patch Debugger.
 
   BUILD_OTHER_CONFIG: "false" # Merge config files.
-  MERGE_CONFIG_FILES: "vendor/debugfs.config,vendor/lahaina_QGKI.config"
+  MERGE_CONFIG_FILES: ""
 
   FREE_MORE_SPACE: "false" # if u want get more space, enabled it.
 
